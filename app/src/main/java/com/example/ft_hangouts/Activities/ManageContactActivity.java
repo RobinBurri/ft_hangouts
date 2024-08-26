@@ -8,8 +8,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-
 import com.example.ft_hangouts.DataBase.DBHelper;
 import com.example.ft_hangouts.Models.Contact;
 import com.example.ft_hangouts.R;
@@ -25,7 +23,6 @@ public class ManageContactActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_manage_contact);
         initializeView();
         addClickListener();

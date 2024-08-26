@@ -8,6 +8,12 @@
     android:fitsSystemWindows="true"
     tools:context=".Activities.SettingsActivity">
 
+    <include
+        android:id="@+id/custom_action_bar"
+        layout="@layout/custom_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/phoneNumberTxt"
         android:layout_width="wrap_content"

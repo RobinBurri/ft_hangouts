@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/messageText"
-        android:textSize="8sp"
+        android:textSize="11sp"
         android:textAlignment="textEnd"
         android:text="12/04/2024 12:12:23" />
 

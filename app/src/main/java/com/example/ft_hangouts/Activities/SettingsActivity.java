@@ -5,8 +5,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-
 import com.example.ft_hangouts.DataBase.DBHelper;
 import com.example.ft_hangouts.R;
 
@@ -18,7 +16,6 @@ public class SettingsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_settings);
         initializeView();
         addClickListener();
