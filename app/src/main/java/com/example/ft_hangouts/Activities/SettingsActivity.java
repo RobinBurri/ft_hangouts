@@ -11,7 +11,7 @@ import com.example.ft_hangouts.R;
 public class SettingsActivity extends BaseActivity {
 
     private DBHelper db;
-    private Button btnLanguageDefault, btnLanguageEnglish, btnColorDefault, btnColorDark, btnColorLight, btnColorOrange;
+    private Button btnLanguageDefault, btnLanguageEnglish, btnColorDark, btnColorLight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +25,8 @@ public class SettingsActivity extends BaseActivity {
     private void initializeView() {
         btnLanguageDefault = findViewById(R.id.btnLanguageDefault);
         btnLanguageEnglish = findViewById(R.id.btnLanguageEnglish);
-        btnColorDefault = findViewById(R.id.btnColorDefault);
         btnColorDark = findViewById(R.id.btnColorBlackWhite);
         btnColorLight = findViewById(R.id.btnColorBlue);
-        btnColorOrange = findViewById(R.id.btnColorOrange);
     }
 
     private void addClickListener() {
@@ -48,14 +46,6 @@ public class SettingsActivity extends BaseActivity {
                 }
             });
         }
-        if (btnColorDefault != null) {
-            btnColorDefault.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(SettingsActivity.this, "Default Color clicked", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
         if (btnColorDark != null) {
             btnColorDark.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -69,14 +59,6 @@ public class SettingsActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(SettingsActivity.this, "Light Color clicked", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-        if (btnColorOrange != null) {
-            btnColorOrange.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(SettingsActivity.this, "Orange Color clicked", Toast.LENGTH_SHORT).show();
                 }
             });
         }

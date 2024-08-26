@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ft_hangouts.Adapters.ContactsRecycleViewAdapter;
+import com.example.ft_hangouts.Adapters.ContactsListViewAdapter;
 import com.example.ft_hangouts.DataBase.DBHelper;
 import com.example.ft_hangouts.Models.Contact;
 import com.example.ft_hangouts.R;
@@ -19,8 +19,9 @@ import java.util.ArrayList;
 public class MainActivity extends BaseActivity {
 
     private DBHelper db;
-    private RecyclerView contactsRecyclerView;
-    private ContactsRecycleViewAdapter adapter;
+    private ListView contactsListView;
+    private ContactsListViewAdapter adapter;
+    private ArrayList<Contact> contacts;
     private Button btnAddContact;
 
     @Override
@@ -32,17 +33,14 @@ public class MainActivity extends BaseActivity {
         db = DBHelper.getInstance(this);
 
         ArrayList<Contact> contacts = db.getAllContacts();
-        adapter = new ContactsRecycleViewAdapter(this);
-        adapter.setContacts(contacts);
-
-        contactsRecyclerView.setAdapter(adapter);
-        contactsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new ContactsListViewAdapter(this, contacts);
+        contactsListView.setAdapter(adapter);
         updateEmptyView(contacts);
     }
 
     private void initializeView() {
         btnAddContact = findViewById(R.id.btnAddContact);
-        contactsRecyclerView = findViewById(R.id.contactsRecyclerView);
+        contactsListView = findViewById(R.id.contactsListView);
     }
 
     private void addClickListener() {
@@ -61,10 +59,10 @@ public class MainActivity extends BaseActivity {
         TextView emptyView = findViewById(R.id.emptyView);
         if (contacts.isEmpty()) {
             emptyView.setVisibility(View.VISIBLE);
-            contactsRecyclerView.setVisibility(View.GONE);
+            contactsListView.setVisibility(View.GONE);
         } else {
             emptyView.setVisibility(View.GONE);
-            contactsRecyclerView.setVisibility(View.VISIBLE);
+            contactsListView.setVisibility(View.VISIBLE);
         }
     }
 }
