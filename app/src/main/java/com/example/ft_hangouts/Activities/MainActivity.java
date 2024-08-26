@@ -7,8 +7,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.example.ft_hangouts.Adapters.ContactsListViewAdapter;
 import com.example.ft_hangouts.DataBase.DBHelper;
 import com.example.ft_hangouts.Models.Contact;
