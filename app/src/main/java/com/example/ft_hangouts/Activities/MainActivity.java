@@ -13,6 +13,7 @@ import com.example.ft_hangouts.Models.Contact;
 import com.example.ft_hangouts.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainActivity extends BaseActivity {
 

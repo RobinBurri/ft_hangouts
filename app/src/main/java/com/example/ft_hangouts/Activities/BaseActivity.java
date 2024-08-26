@@ -13,6 +13,7 @@ import com.example.ft_hangouts.R;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 public abstract class BaseActivity extends Activity {
     ImageView leftArrowIcon, settingsIcon;
@@ -23,6 +24,7 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Objects.requireNonNull(getActionBar()).hide();
     }
 
     @Override

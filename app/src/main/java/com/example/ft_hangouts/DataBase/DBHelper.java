@@ -5,8 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 import com.example.ft_hangouts.Models.Contact;
 
 import java.util.ArrayList;
@@ -27,7 +25,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String COLUMN_SENDER_ID = "SENDER_ID";
     private static final String COLUMN_RECEIVER_ID = "RECEIVER_ID";
 
-    public DBHelper(@Nullable Context context) {
+    public DBHelper(Context context) {
         super(context, "contact.db", null, 1);
     }
 
