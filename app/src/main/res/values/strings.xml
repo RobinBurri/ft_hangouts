@@ -14,8 +14,9 @@
     <string name="last_name_txt">Last Name</string>
     <string name="first_name_hint">Enter First Name</string>
     <string name="first_name_txt">First Name</string>
-    <string name="phone_number_hint">Enter Phone Number</string>
+    <string name="phone_number_hint">Enter Number</string>
     <string name="phone_number_txt">Phone Number</string>
+    <string name="default_picture_txt">default picture</string>
     <!-- Settings Activity -->
     <string name="languages_txt">Languages</string>
     <string name="btn_language_default">Default</string>

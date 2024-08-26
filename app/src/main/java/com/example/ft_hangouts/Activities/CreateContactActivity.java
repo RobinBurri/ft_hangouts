@@ -42,6 +42,7 @@ public class CreateContactActivity extends BaseActivity {
         btnSaveContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(CreateContactActivity.this, "clicked", Toast.LENGTH_SHORT).show();
                 if (phoneNumberInput.getText().toString().isEmpty() || firstNameInput.getText().toString().isEmpty()) {
                     Toast.makeText(CreateContactActivity.this, "firstName and Phone number are mandatory.", Toast.LENGTH_SHORT).show();
                     return;

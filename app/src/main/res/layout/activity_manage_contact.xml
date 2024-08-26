@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ManageContactActivity"
+    android:id="@+id/CreateContactActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ManageContactActivity">
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="73dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
+    tools:context=".Activities.CreateContactActivity">
 
     <include
         android:id="@+id/custom_action_bar"
@@ -28,169 +12,203 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/phoneNumberTxt"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:fontFamily="@font/belgrano"
-        android:text="@string/phone_number_txt"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
 
-    <EditText
-        android:id="@+id/phoneNumberInput"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/phoneNumberTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/belgrano"
+            android:text="@string/phone_number_txt"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/phoneNumberInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="@string/phone_number_hint"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:textColor="@color/grey"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/phone_number_hint"
-        android:importantForAutofill="no"
-        android:inputType="phone"
-        android:textColor="@color/grey"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/phoneNumberTxt"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/phoneNumberTxt" />
+        android:layout_marginTop="165dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/firstNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/belgrano"
+            android:text="@string/first_name_txt"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/firstNameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="@string/first_name_hint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/grey"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
 
 
-    <TextView
-        android:id="@+id/firstNameTxt"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/belgrano"
-        android:text="@string/first_name_txt"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumberTxt" />
+        android:layout_marginTop="210dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
 
-    <EditText
-        android:id="@+id/firstNameInput"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/lastNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/belgrano"
+            android:text="@string/last_name_txt"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/lastNameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="@string/last_name_hint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/grey"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/first_name_hint"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:textColor="@color/grey"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/firstNameTxt"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/firstNameTxt" />
+        android:layout_marginTop="255dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
 
-    <TextView
-        android:id="@+id/lastNameTxt"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/nickNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/belgrano"
+            android:text="@string/nick_name_txt"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/nickNameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="@string/nick_name_hint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/grey"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/belgrano"
-        android:text="@string/last_name_txt"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameTxt" />
+        android:layout_marginTop="305dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
 
-    <EditText
-        android:id="@+id/lastNameInput"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/pictureTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/belgrano"
+            android:text="@string/picture_txt"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/pictureTxtInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/default_picture_txt" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/last_name_hint"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:textColor="@color/grey"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/lastNameTxt"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/lastNameTxt" />
+        android:layout_marginTop="350dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
 
-    <TextView
-        android:id="@+id/nickNameTxt"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnSelectPic"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/btn_style"
+            android:text="@string/btn_select_picture_title"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/belgrano"
-        android:text="@string/nick_name_txt"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameTxt" />
+        android:layout_marginTop="640dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
 
-    <EditText
-        android:id="@+id/nickNameInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/nick_name_hint"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:textColor="@color/grey"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/nickNameTxt"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/nickNameTxt" />
+        <Button
+            android:id="@+id/btnSaveContact"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/btn_style"
+            android:text="@string/btn_save_contact_title"
+            android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/pictureTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/belgrano"
-        android:text="@string/picture_txt"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/nickNameTxt" />
+        <Button
+            android:id="@+id/btnDeleteContact"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/btn_style"
+            android:text="@string/btn_delete_contact_title"
+            android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/pictureTxtInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="imageUrl"
-        app:layout_constraintBottom_toBottomOf="@+id/pictureTxt"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/pictureTxt" />
+    </RelativeLayout>
 
-
-    <Button
-        android:id="@+id/btnSelectPic"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/btn_style"
-        android:text="@string/btn_select_picture_title"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pictureTxtInput" />
-
-    <Button
-        android:id="@+id/btnSaveContact"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/btn_style"
-        android:text="@string/btn_save_contact_title"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnDeleteContact"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:background="@drawable/btn_style"
-        android:text="@string/btn_delete_contact_title"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnSaveContact"
-        app:layout_constraintTop_toTopOf="@+id/btnSaveContact" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
