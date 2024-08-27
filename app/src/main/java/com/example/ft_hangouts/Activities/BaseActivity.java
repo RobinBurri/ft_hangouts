@@ -10,16 +10,15 @@ import android.widget.Toast;
 
 import com.example.ft_hangouts.R;
 
-import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Objects;
 
 public abstract class BaseActivity extends Activity {
     ImageView leftArrowIcon, settingsIcon;
-    private long backgroundTime;
-    private SimpleDateFormat dateFormat;
-    private boolean isAppInBackground = false;
+    private long lastPauseTime;
+    private static int activityReferences = 0;
+    private static boolean isActivityChangingConfigurations = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +31,7 @@ public abstract class BaseActivity extends Activity {
         FrameLayout rootLayout = new FrameLayout(this);
         View activityContent = getLayoutInflater().inflate(layoutResID, rootLayout, false);
         rootLayout.addView(activityContent);
-
         super.setContentView(rootLayout);
-        dateFormat = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
         initializeView();
         addClickListeners();
     }
@@ -80,14 +77,12 @@ public abstract class BaseActivity extends Activity {
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
-        if (isAppInBackground) {
-            isAppInBackground = false;
-            if (backgroundTime > 0) {
-                String formattedTime = dateFormat.format(new Date(backgroundTime));
-                String message = getString(R.string.background_time_message, formattedTime);
-                Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    protected void onStart() {
+        super.onStart();
+        if (++activityReferences == 1 && !isActivityChangingConfigurations) {
+            if (lastPauseTime > 0) {
+                String timeString = DateFormat.getTimeInstance().format(new Date(lastPauseTime));
+                Toast.makeText(this, "App went to background at: " + timeString, Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -95,16 +90,10 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onStop() {
         super.onStop();
-        if (!isFinishing()) {
-            backgroundTime = System.currentTimeMillis();
-            isAppInBackground = true;
+        isActivityChangingConfigurations = isChangingConfigurations();
+        if (--activityReferences == 0 && !isActivityChangingConfigurations) {
+            lastPauseTime = System.currentTimeMillis();
         }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        isAppInBackground = false;
     }
 
 }
