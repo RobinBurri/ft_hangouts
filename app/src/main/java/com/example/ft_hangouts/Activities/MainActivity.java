@@ -8,12 +8,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.ft_hangouts.Adapters.ContactsListViewAdapter;
-import com.example.ft_hangouts.DataBase.DBHelper;
+import com.example.ft_hangouts.Utils.DBHelper;
 import com.example.ft_hangouts.Models.Contact;
 import com.example.ft_hangouts.R;
+import com.example.ft_hangouts.Utils.ThemeUtils;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class MainActivity extends BaseActivity {
 
@@ -26,6 +26,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ThemeUtils.applyTheme(this);
         setContentView(R.layout.activity_main);
         initializeView();
         addClickListener();

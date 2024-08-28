@@ -95,5 +95,4 @@ public abstract class BaseActivity extends Activity {
             lastPauseTime = System.currentTimeMillis();
         }
     }
-
 }

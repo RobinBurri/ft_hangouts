@@ -8,9 +8,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ft_hangouts.DataBase.DBHelper;
+import com.example.ft_hangouts.Utils.DBHelper;
 import com.example.ft_hangouts.Models.Contact;
 import com.example.ft_hangouts.R;
+import com.example.ft_hangouts.Utils.ThemeUtils;
 
 public class CreateContactActivity extends BaseActivity {
 
@@ -21,6 +22,7 @@ public class CreateContactActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeUtils.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_contact);
         initializeView();

@@ -1,4 +1,4 @@
-package com.example.ft_hangouts.DataBase;
+package com.example.ft_hangouts.Utils;
 
 import android.content.Context;
 import android.database.Cursor;

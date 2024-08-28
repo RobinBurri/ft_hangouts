@@ -5,8 +5,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.ft_hangouts.DataBase.DBHelper;
+import com.example.ft_hangouts.Utils.DBHelper;
 import com.example.ft_hangouts.R;
+import com.example.ft_hangouts.Utils.ThemeUtils;
 
 public class SettingsActivity extends BaseActivity {
 
@@ -15,6 +16,7 @@ public class SettingsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeUtils.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         initializeView();
@@ -50,7 +52,8 @@ public class SettingsActivity extends BaseActivity {
             btnColorDark.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(SettingsActivity.this, "Dark Color clicked", Toast.LENGTH_SHORT).show();
+                    ThemeUtils.saveTheme(SettingsActivity.this, true);
+                    recreate();
                 }
             });
         }
@@ -58,7 +61,8 @@ public class SettingsActivity extends BaseActivity {
             btnColorLight.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(SettingsActivity.this, "Light Color clicked", Toast.LENGTH_SHORT).show();
+                    ThemeUtils.saveTheme(SettingsActivity.this, false);
+                    recreate();
                 }
             });
         }
