@@ -1,17 +1,23 @@
 package com.example.ft_hangouts.Activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ft_hangouts.Utils.DBHelper;
 import com.example.ft_hangouts.Models.Contact;
 import com.example.ft_hangouts.R;
+import com.example.ft_hangouts.Utils.DBHelper;
 import com.example.ft_hangouts.Utils.ThemeUtils;
+
+import java.util.Objects;
 
 public class CreateContactActivity extends BaseActivity {
 
@@ -28,6 +34,7 @@ public class CreateContactActivity extends BaseActivity {
         initializeView();
         addClickListener();
         db = DBHelper.getInstance(this);
+
     }
 
     private void initializeView() {
@@ -59,9 +66,15 @@ public class CreateContactActivity extends BaseActivity {
         btnSelectPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CreateContactActivity.this, "btnSelectPic clicked", Toast.LENGTH_SHORT).show();
+              pickImage();
             }
         });
+    }
+
+    @Override
+    public void onImagePicked(Uri imageUri) {
+        TextView imageTxt = findViewById(R.id.pictureTxtInput);
+        imageTxt.setText(imageUri.toString());
     }
 
     private void clearInputs() {
